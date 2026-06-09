@@ -1,806 +1,714 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snadhya Alavekar | Creative Direction & Digital Architecture</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Cormorant Garamond for luxury serif, Inter for crisp sans-serif -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for sleek modern icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        gold: {
-                            50: '#fbf8f3',
-                            100: '#f4ede0',
-                            200: '#e7d9be',
-                            300: '#d5bd91',
-                            400: '#c19e65',
-                            500: '#b1864a',
-                            600: '#a3743f',
-                            700: '#885c34',
-                            800: '#6f4a2d',
-                            900: '#5c3d27',
-                            950: '#342115',
-                        },
-                        obsidian: {
-                            900: '#0B0B0C',
-                            950: '#050506',
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandhya | Portfolio</title>
 
-    <style>
-        /* Custom scrollbar to keep layout premium */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050506;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #27272a;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #b1864a;
-        }
-        /* Custom selection highlight */
-        ::selection {
-            background-color: #b1864a;
-            color: #ffffff;
-        }
-        /* Custom elegant dot cursor */
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 1px solid rgba(177, 134, 74, 0.5);
-            border-radius: 50%;
-            position: fixed;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-            transition: width 0.3s, height 0.3s, background-color 0.3s;
-        }
-        .custom-cursor-dot {
-            width: 4px;
-            height: 4px;
-            background-color: #b1864a;
-            border-radius: 50%;
-            position: fixed;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-        }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#7b2ff7;
+filter:blur(180px);
+top:-180px;
+left:-150px;
+opacity:.5;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#00dbde;
+filter:blur(180px);
+bottom:-180px;
+right:-150px;
+opacity:.4;
+z-index:-2;
+}
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:1200px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-radius:60px;
+border:1px solid rgba(255,255,255,.15);
+z-index:999;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#fff;
+}
+
+.logo span{
+color:#6ef3ff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:.3s;
+font-weight:500;
+}
+
+nav ul li a:hover{
+color:#6ef3ff;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:120px 8%;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.left{
+flex:1;
+min-width:300px;
+}
+
+.left h3{
+font-size:25px;
+font-weight:400;
+color:#bdbdbd;
+}
+
+.left h1{
+font-size:70px;
+line-height:1.1;
+margin:10px 0;
+}
+
+.left h1 span{
+background:linear-gradient(to right,#6ef3ff,#9d4edd,#ff4ecd);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typing{
+font-size:28px;
+margin:15px 0;
+color:#6ef3ff;
+font-weight:600;
+height:40px;
+}
+
+.left p{
+margin-top:20px;
+line-height:1.8;
+color:#d7d7d7;
+max-width:600px;
+}
+
+.buttons{
+margin-top:35px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+transition:.4s;
+}
+
+.btn1{
+background:linear-gradient(45deg,#6ef3ff,#7b2ff7);
+color:white;
+}
+
+.btn2{
+background:transparent;
+border:2px solid #6ef3ff;
+color:#6ef3ff;
+}
+
+button:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(110,243,255,.3);
+}
+
+.right{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:300px;
+}
+
+.profile{
+width:370px;
+height:370px;
+border-radius:50%;
+background:linear-gradient(45deg,#6ef3ff,#7b2ff7,#ff4ecd);
+padding:8px;
+animation:rotate 10s linear infinite;
+}
+
+.inner{
+width:100%;
+height:100%;
+border-radius:50%;
+background:#111827;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:130px;
+font-weight:700;
+}
+
+@keyframes rotate{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:45px;
+margin-bottom:50px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+background:rgba(255,255,255,.12);
+
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+
+height:10px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+.fill{
+
+height:100%;
+background:linear-gradient(to right,#6ef3ff,#7b2ff7);
+
+}
+
+.about{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+
+}
+
+.aboutbox{
+
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:25px;
+line-height:1.9;
+
+}
+
+.contact{
+
+text-align:center;
+
+}
+
+input,textarea{
+
+width:100%;
+padding:15px;
+margin-top:15px;
+background:rgba(255,255,255,.08);
+border:none;
+border-radius:12px;
+color:white;
+
+}
+
+textarea{
+height:150px;
+resize:none;
+}
+
+.send{
+
+margin-top:20px;
+width:100%;
+background:linear-gradient(45deg,#6ef3ff,#7b2ff7);
+
+}
+
+footer{
+
+padding:25px;
+text-align:center;
+background:#070b1d;
+color:#aaa;
+
+}
+
+@media(max-width:900px){
+
+.left h1{
+font-size:50px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+
 </head>
-<body class="bg-obsidian-950 text-stone-300 font-sans selection:bg-gold-500 selection:text-white overflow-x-hidden">
-
-    <!-- Custom Interactive Cursor (hidden on mobile devices) -->
-    <div id="cursor" class="custom-cursor hidden md:block"></div>
-    <div id="cursor-dot" class="custom-cursor-dot hidden md:block"></div>
-
-    <!-- Global Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-obsidian-950/70 border-b border-white/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="group flex items-center gap-3">
-                <span class="font-serif text-2xl font-semibold tracking-wider text-white transition-colors duration-300 group-hover:text-gold-400">
-                    S <span class="text-gold-400">.</span> A
-                </span>
-                <span class="h-4 w-[1px] bg-white/10"></span>
-                <span class="text-xs uppercase tracking-widest text-stone-500 font-mono">portfolio_v1.0</span>
-            </a>
-            
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
-                <a href="#about" class="text-stone-400 hover:text-white transition-colors duration-200">About</a>
-                <a href="#sandbox" class="text-gold-400 hover:text-gold-300 transition-colors duration-200 flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-gold-400 animate-ping"></span>
-                    Git Sandbox
-                </a>
-                <a href="#projects" class="text-stone-400 hover:text-white transition-colors duration-200">Projects</a>
-                <a href="#services" class="text-stone-400 hover:text-white transition-colors duration-200">Services</a>
-                <a href="#contact" class="text-stone-400 hover:text-white transition-colors duration-200">Contact</a>
-            </nav>
-
-            <!-- CTA / GitHub Icon -->
-            <div class="flex items-center gap-4">
-                <a href="https://github.com" target="_blank" class="text-stone-400 hover:text-white text-xl transition-colors duration-200" title="Visit GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#sandbox" class="hidden sm:inline-flex px-5 py-2 rounded-full bg-gold-500/10 hover:bg-gold-500 text-gold-400 hover:text-white border border-gold-500/30 hover:border-transparent text-xs uppercase tracking-wider font-semibold transition-all duration-300">
-                    Run Push Test
-                </a>
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white text-xl focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="fixed inset-0 bg-obsidian-950 z-40 transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center p-8">
-        <button id="mobile-menu-close" class="absolute top-6 right-6 text-white text-2xl">
-            <i class="fas fa-times"></i>
-        </button>
-        <nav class="flex flex-col gap-8 text-2xl uppercase tracking-widest font-serif text-center">
-            <a href="#about" class="text-stone-400 hover:text-white transition-colors">About</a>
-            <a href="#sandbox" class="text-gold-400 hover:text-gold-300 transition-colors flex items-center justify-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-gold-400 animate-ping"></span>
-                Git Sandbox
-            </a>
-            <a href="#projects" class="text-stone-400 hover:text-white transition-colors">Projects</a>
-            <a href="#services" class="text-stone-400 hover:text-white transition-colors">Services</a>
-            <a href="#contact" class="text-stone-400 hover:text-white transition-colors">Contact</a>
-        </nav>
-    </div>
-
-    <!-- Cinematic Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Abstract gradient glows -->
-        <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-amber-600/5 rounded-full blur-[180px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Hero Left Side: Editorial Typography -->
-            <div class="lg:col-span-7 space-y-8 text-left">
-                <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs tracking-widest text-gold-400 uppercase">
-                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Ready for Local Deployment & Push Testing
-                </div>
-                
-                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-light tracking-tight leading-none">
-                    Snadhya <br>
-                    <span class="text-gold-400 italic">Alavekar</span>
-                </h1>
-
-                <p class="text-stone-400 text-lg md:text-xl font-light leading-relaxed max-w-xl">
-                    High-end architectural digital experiences, engineered with meticulous attention to detail. This canvas marks the initial stage of production deployment.
-                </p>
-
-                <!-- Navigation Quick-Buttons -->
-                <div class="flex flex-wrap items-center gap-4 pt-4">
-                    <a href="#sandbox" class="px-8 py-4 rounded-full bg-gold-500 text-white text-sm tracking-wider uppercase font-semibold hover:bg-gold-600 shadow-lg shadow-gold-500/10 transition-all duration-300">
-                        Launch Git Sandbox
-                    </a>
-                    <a href="#about" class="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white text-sm tracking-wider uppercase font-semibold border border-white/10 transition-all duration-300">
-                        Explore Profile
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Right Side: Floating Interactive Cards -->
-            <div class="lg:col-span-5 relative flex justify-center">
-                <div class="relative w-full max-w-[400px] aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-tr from-obsidian-900 to-stone-900 p-8 flex flex-col justify-between shadow-2xl shadow-black">
-                    <!-- Elegant Abstract Grid Overlay -->
-                    <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-                    
-                    <div class="relative z-10 flex justify-between items-start">
-                        <div class="text-xs font-mono text-stone-500">INIT: V1.0.0</div>
-                        <i class="fab fa-git-alt text-3xl text-gold-400/80 animate-bounce"></i>
-                    </div>
-
-                    <div class="relative z-10 space-y-4">
-                        <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-gold-500/30 to-transparent"></div>
-                        <h3 class="font-serif text-3xl text-white font-medium">Elevating Git Workflows</h3>
-                        <p class="text-xs text-stone-400 font-mono leading-relaxed">
-                            Connecting local machine architectures to global content delivery networks seamlessly. Prepared for high-fidelity code tests.
-                        </p>
-                        <div class="flex gap-2 text-stone-500 font-mono text-[10px]">
-                            <span>[status: pending_push]</span>
-                            <span>[env: dev-staging]</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Wave divider at bottom -->
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg class="relative block w-full h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,88.42,26.85,164.44,47.56,243.61,60.54,321.39,56.44Z" fill="#0c0c0d"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Interactive Git Push Sandbox Section -->
-    <section id="sandbox" class="py-24 bg-gradient-to-b from-[#0c0c0d] to-obsidian-950 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold-400 bg-gold-500/10 px-4 py-1.5 rounded-full">
-                    Production Environment Staging
-                </span>
-                <h2 class="font-serif text-4xl md:text-5xl text-white font-light tracking-tight">
-                    Git Push Simulator
-                </h2>
-                <p class="text-stone-400 text-sm md:text-base leading-relaxed">
-                    Test your deployment stream. Customize your commit tag below and simulate a real-time build sequence directly from this terminal into the luxury cloud network.
-                </p>
-            </div>
-
-            <!-- Simulator Wrapper -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                
-                <!-- Setup Controller Left -->
-                <div class="lg:col-span-4 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-6 backdrop-blur-sm">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="h-8 w-8 rounded-lg bg-gold-500/20 flex items-center justify-center text-gold-400">
-                                <i class="fas fa-terminal"></i>
-                            </div>
-                            <span class="text-white font-medium uppercase text-sm tracking-wider">Deployment Terminal</span>
-                        </div>
-                        <p class="text-stone-400 text-xs font-mono leading-relaxed">
-                            Configure simulated origin, commit name, and target branches. Ready for test trigger.
-                        </p>
-                        
-                        <!-- Form Inputs -->
-                        <div class="space-y-4 pt-2">
-                            <div>
-                                <label class="block text-stone-500 text-[10px] uppercase font-mono mb-1">Target Repository</label>
-                                <input type="text" readonly value="github.com/snadhya-alavekar/main-portfolio" class="w-full bg-obsidian-950 border border-white/10 rounded-lg px-3 py-2 text-xs font-mono text-stone-300 focus:outline-none focus:border-gold-500">
-                            </div>
-                            <div>
-                                <label class="block text-stone-500 text-[10px] uppercase font-mono mb-1">Active Branch</label>
-                                <select id="git-branch" class="w-full bg-obsidian-950 border border-white/10 rounded-lg px-3 py-2 text-xs font-mono text-stone-300 focus:outline-none focus:border-gold-500">
-                                    <option value="main">main (production)</option>
-                                    <option value="dev">dev (testing)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-stone-500 text-[10px] uppercase font-mono mb-1">Commit Message</label>
-                                <input id="commit-message" type="text" value="feat: deploy high-end single-page portfolio 🚀" class="w-full bg-obsidian-950 border border-white/10 rounded-lg px-3 py-2 text-xs font-mono text-white focus:outline-none focus:border-gold-400 transition-all">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Git Trigger Button -->
-                    <button id="trigger-push-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-white font-mono text-xs uppercase tracking-widest font-bold hover:shadow-lg hover:shadow-gold-500/20 transition-all flex items-center justify-center gap-2">
-                        <i id="btn-icon" class="fas fa-arrow-up-from-bracket"></i>
-                        <span id="btn-text">RUN GIT PUSH PIPELINE</span>
-                    </button>
-                </div>
-
-                <!-- Simulation Visual Pipeline Right -->
-                <div class="lg:col-span-8 flex flex-col gap-6">
-                    <!-- High-End Terminal Visualizer -->
-                    <div class="bg-obsidian-900 border border-white/10 rounded-2xl flex-1 flex flex-col overflow-hidden shadow-2xl">
-                        <!-- Terminal Title Bar -->
-                        <div class="bg-obsidian-950 border-b border-white/5 px-6 py-4 flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500/60 block"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500/60 block"></span>
-                                <span class="w-3 h-3 rounded-full bg-green-500/60 block"></span>
-                            </div>
-                            <span class="text-xs font-mono text-stone-400">snadhya-alavekar-terminal // static_build</span>
-                            <div class="text-xs text-gold-400 font-mono">
-                                <span id="pipeline-status">IDLE</span>
-                            </div>
-                        </div>
-
-                        <!-- Terminal Display Area -->
-                        <div id="terminal-screen" class="p-6 font-mono text-xs text-stone-300 overflow-y-auto space-y-2 flex-1 max-h-[300px] md:max-h-[380px]">
-                            <!-- Prompt screen initialized -->
-                            <div class="text-stone-500">// Terminal initialized. Custom push sequences configured.</div>
-                            <div class="text-stone-500">// Enter a custom commit message on the left and hit the deploy button.</div>
-                            <div class="pt-2 text-white">snadhya-alavekar-workstation:~$ <span class="animate-pulse">_</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Pipeline Stage Tracker -->
-                    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-4 items-center justify-center">
-                        <div class="stage-card p-3 rounded-xl border border-white/5 bg-obsidian-950/40 flex items-center gap-3 transition-all duration-300" id="stage-init">
-                            <div class="stage-indicator h-3 w-3 rounded-full bg-stone-700"></div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-mono text-white font-medium">Stage 1</span>
-                                <span class="text-[10px] text-stone-400">Initialize Commit</span>
-                            </div>
-                        </div>
-                        <div class="stage-card p-3 rounded-xl border border-white/5 bg-obsidian-950/40 flex items-center gap-3 transition-all duration-300" id="stage-pack">
-                            <div class="stage-indicator h-3 w-3 rounded-full bg-stone-700"></div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-mono text-white font-medium">Stage 2</span>
-                                <span class="text-[10px] text-stone-400">Object Pack</span>
-                            </div>
-                        </div>
-                        <div class="stage-card p-3 rounded-xl border border-white/5 bg-obsidian-950/40 flex items-center gap-3 transition-all duration-300" id="stage-push">
-                            <div class="stage-indicator h-3 w-3 rounded-full bg-stone-700"></div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-mono text-white font-medium">Stage 3</span>
-                                <span class="text-[10px] text-stone-400">Cloud Remote IP</span>
-                            </div>
-                        </div>
-                        <div class="stage-card p-3 rounded-xl border border-white/5 bg-obsidian-950/40 flex items-center gap-3 transition-all duration-300" id="stage-live">
-                            <div class="stage-indicator h-3 w-3 rounded-full bg-stone-700"></div>
-                            <div class="flex flex-col">
-                                <span class="text-xs font-mono text-white font-medium">Stage 4</span>
-                                <span class="text-[10px] text-stone-400">Build Success</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-obsidian-950 relative overflow-hidden">
-        <!-- Vertical fine lines for architectural feel -->
-        <div class="absolute left-10 md:left-24 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
-        <div class="absolute right-10 md:right-24 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent"></div>
-
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            <!-- Left Grid: Large artistic serif quote -->
-            <div class="lg:col-span-5 space-y-6">
-                <span class="text-xs uppercase tracking-widest text-gold-400 font-mono">Philosophy</span>
-                <h3 class="font-serif text-4xl md:text-5xl text-white font-light leading-tight">
-                    "Design is not simply what it looks like; it's how smoothly it integrates across environments."
-                </h3>
-                <p class="text-stone-400 text-sm leading-relaxed max-w-md">
-                    Bringing creative architectural vision and modern developer systems together. Every concept of layout design is crafted dynamically to perform efficiently on any machine setup.
-                </p>
-            </div>
-
-            <!-- Right Grid: Narrative block & highlights -->
-            <div class="lg:col-span-7 space-y-8">
-                <div class="space-y-4">
-                    <span class="text-xs uppercase tracking-widest text-stone-500 font-mono">The Story</span>
-                    <h2 class="font-serif text-3xl text-white font-medium">About Snadhya Alavekar</h2>
-                    <p class="text-stone-300 font-light leading-relaxed">
-                        A modern design architect interested in minimal structures, polished branding systems, and scalable digital architectures. Focused on constructing elegant visual statements that deliver long-lasting brand influence.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                    <div class="p-6 rounded-xl border border-white/5 bg-white/[0.02] space-y-2">
-                        <span class="text-gold-400 font-serif text-3xl font-light">01 //</span>
-                        <h4 class="text-white text-sm uppercase tracking-wider font-semibold">Architectural Aesthetic</h4>
-                        <p class="text-stone-400 text-xs font-light leading-relaxed">Curating geometric layouts, structured editorial typography, and high-end visual systems.</p>
-                    </div>
-                    <div class="p-6 rounded-xl border border-white/5 bg-white/[0.02] space-y-2">
-                        <span class="text-gold-400 font-serif text-3xl font-light">02 //</span>
-                        <h4 class="text-white text-sm uppercase tracking-wider font-semibold">Continuous Integration</h4>
-                        <p class="text-stone-400 text-xs font-light leading-relaxed">Passionate about seamless cloud pushes, testing codebases, and robust system configurations.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Selected Works / Portfolio Grid -->
-    <section id="projects" class="py-24 bg-[#0a0a0b] relative">
-        <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
-                <div class="space-y-4">
-                    <span class="text-xs uppercase tracking-widest text-gold-400 font-mono">Portfolio</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-white font-light">Selected Works</h2>
-                </div>
-                <!-- Interactive Filter Buttons -->
-                <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider font-mono">
-                    <button class="project-filter-btn px-4 py-2 rounded-full bg-gold-500 text-white border border-gold-500" data-filter="all">All</button>
-                    <button class="project-filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-gold-500 text-stone-400 hover:text-white transition" data-filter="editorial">Editorial</button>
-                    <button class="project-filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-gold-500 text-stone-400 hover:text-white transition" data-filter="digital">Digital Dev</button>
-                </div>
-            </div>
-
-            <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1 (Editorial) -->
-                <div class="project-card group cursor-pointer relative overflow-hidden rounded-2xl border border-white/5 bg-obsidian-900 flex flex-col justify-between p-6 aspect-square transition-all duration-500 hover:border-gold-500/30" data-category="editorial">
-                    <div class="absolute inset-0 bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
-                    
-                    <div class="flex justify-between items-start">
-                        <span class="text-xs font-mono text-stone-500">PROJECT // 01</span>
-                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full">Editorial</span>
-                    </div>
-
-                    <div class="space-y-4 relative z-10">
-                        <h3 class="font-serif text-3xl text-white group-hover:text-gold-400 transition-colors duration-300">Modern Brand Architecture</h3>
-                        <p class="text-xs text-stone-400 font-light leading-relaxed">Designing luxury structural frameworks and visual patterns tailored for premium physical publications.</p>
-                        <div class="flex items-center gap-2 text-[10px] font-mono text-stone-500">
-                            <span>GRID SYSTEM</span> • <span>LUXURY RE-BRAND</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 (Digital) -->
-                <div class="project-card group cursor-pointer relative overflow-hidden rounded-2xl border border-white/5 bg-obsidian-900 flex flex-col justify-between p-6 aspect-square transition-all duration-500 hover:border-gold-500/30" data-category="digital">
-                    <div class="absolute inset-0 bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
-                    
-                    <div class="flex justify-between items-start">
-                        <span class="text-xs font-mono text-stone-500">PROJECT // 02</span>
-                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full">Digital Dev</span>
-                    </div>
-
-                    <div class="space-y-4 relative z-10">
-                        <h3 class="font-serif text-3xl text-white group-hover:text-gold-400 transition-colors duration-300">Automated Push Pipeline</h3>
-                        <p class="text-xs text-stone-400 font-light leading-relaxed">Advanced static site builds connected directly to GitHub Actions pipelines with instant deployment notifications.</p>
-                        <div class="flex items-center gap-2 text-[10px] font-mono text-stone-500">
-                            <span>CI/CD SETUP</span> • <span>AUTO STAGING</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 (Editorial) -->
-                <div class="project-card group cursor-pointer relative overflow-hidden rounded-2xl border border-white/5 bg-obsidian-900 flex flex-col justify-between p-6 aspect-square transition-all duration-500 hover:border-gold-500/30" data-category="editorial">
-                    <div class="absolute inset-0 bg-[radial-gradient(#ffffff04_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none"></div>
-                    
-                    <div class="flex justify-between items-start">
-                        <span class="text-xs font-mono text-stone-500">PROJECT // 03</span>
-                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest bg-gold-500/10 px-3 py-1 rounded-full">Editorial</span>
-                    </div>
-
-                    <div class="space-y-4 relative z-10">
-                        <h3 class="font-serif text-3xl text-white group-hover:text-gold-400 transition-colors duration-300">Monolithic Typography</h3>
-                        <p class="text-xs text-stone-400 font-light leading-relaxed">Developing bespoke editorial print systems centered on massive, structural geometric layouts and bold grids.</p>
-                        <div class="flex items-center gap-2 text-[10px] font-mono text-stone-500">
-                            <span>POSTER DESIGN</span> • <span>FONTS ARCHITECTURE</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Services & Expertise Section -->
-    <section id="services" class="py-24 bg-obsidian-950 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold-400">Services</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-white font-light">Strategic Capabilities</h2>
-                <p class="text-stone-400 text-sm">Providing bespoke high-performance design services, tailored for those seeking to implement high-end digital identity architectures.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Service 1 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 space-y-6">
-                    <div class="h-12 w-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white">Brand Direction</h3>
-                    <p class="text-stone-400 text-xs leading-relaxed font-light">Defining structured visual signatures, premium color palettes, and editorial typography strategies that solidify market positioning.</p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 space-y-6">
-                    <div class="h-12 w-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
-                        <i class="fas fa-code-merge"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white">Digital Engineering</h3>
-                    <p class="text-stone-400 text-xs leading-relaxed font-light">Developing responsive single-page visual ecosystems, optimized for static web platforms with streamlined Git integrations.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="p-8 rounded-2xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 space-y-6">
-                    <div class="h-12 w-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white">CI/CD & Cloud Setup</h3>
-                    <p class="text-stone-400 text-xs leading-relaxed font-light">Setting up modern, automatic push-to-deploy static architectures that enable quick testing, builds, and rapid releases.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-24 bg-[#0a0a0b] border-t border-white/5 relative">
-        <div class="max-w-4xl mx-auto px-6">
-            
-            <div class="text-center space-y-4 mb-12">
-                <span class="text-xs font-mono uppercase tracking-widest text-gold-400">Connection</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-white font-light">Initiate Collaboration</h2>
-                <p class="text-stone-400 text-sm max-w-lg mx-auto">Have an exciting idea to build, or ready to connect your production pipeline? Reach out using the formal matrix below.</p>
-            </div>
-
-            <!-- Sleek luxury styled form -->
-            <form id="contact-form" class="space-y-6 bg-white/[0.01] border border-white/5 p-8 md:p-12 rounded-2xl backdrop-blur-md">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-1">
-                        <label class="block text-stone-500 text-[10px] uppercase font-mono">Your Name</label>
-                        <input type="text" required placeholder="E.g., Snadhya" class="w-full bg-obsidian-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition-all">
-                    </div>
-                    <div class="space-y-1">
-                        <label class="block text-stone-500 text-[10px] uppercase font-mono">Email Address</label>
-                        <input type="email" required placeholder="name@example.com" class="w-full bg-obsidian-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition-all">
-                    </div>
-                </div>
-
-                <div class="space-y-1">
-                    <label class="block text-stone-500 text-[10px] uppercase font-mono">Deployment Objectives / Message</label>
-                    <textarea required rows="4" placeholder="Describe your web design architecture requirements..." class="w-full bg-obsidian-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition-all resize-none"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 rounded-xl bg-white hover:bg-gold-500 text-obsidian-950 hover:text-white text-xs uppercase tracking-widest font-mono font-bold transition-all duration-300">
-                    Dispatch Message
-                </button>
-            </form>
-
-            <div id="form-success-box" class="hidden mt-6 p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-center font-mono text-xs">
-                ✨ Message successfully packaged! Terminal simulated transmission resolve.
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Minimalist Editorial Footer -->
-    <footer class="bg-obsidian-950 py-12 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            
-            <div class="text-center md:text-left space-y-2">
-                <span class="font-serif text-xl font-semibold tracking-wider text-white">S<span class="text-gold-400">.</span>A</span>
-                <p class="text-[10px] text-stone-500 font-mono">© 2026 SNADHYA ALAVEKAR. ALL RIGHTS RESERVED.</p>
-            </div>
-
-            <!-- Social / GitHub indicators -->
-            <div class="flex items-center gap-6 text-stone-400 text-sm font-mono">
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#sandbox" class="text-gold-400 hover:text-gold-300 transition">Sandbox</a>
-                <a href="https://github.com" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                    <i class="fab fa-github text-lg"></i>
-                    <span>GitHub Staging</span>
-                </a>
-            </div>
-
-        </div>
-    </footer>
-
-    <!-- Interactive Scripts -->
-    <script>
-        // Custom Mouse Cursor Logic (hidden on touchscreens automatically via CSS/JS check)
-        const cursor = document.getElementById('cursor');
-        const cursorDot = document.getElementById('cursor-dot');
-        
-        if (cursor && cursorDot) {
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-            });
-
-            // Scale cursor on hoverable elements
-            const hoverables = document.querySelectorAll('a, button, input, select, textarea, .project-card');
-            hoverables.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    cursor.style.width = '35px';
-                    cursor.style.height = '35px';
-                    cursor.style.borderColor = '#b1864a';
-                    cursor.style.backgroundColor = 'rgba(177, 134, 74, 0.05)';
-                });
-                item.addEventListener('mouseleave', () => {
-                    cursor.style.width = '20px';
-                    cursor.style.height = '20px';
-                    cursor.style.borderColor = 'rgba(177, 134, 74, 0.5)';
-                    cursor.style.backgroundColor = 'transparent';
-                });
-            });
-        }
-
-        // Mobile Menu Toggling
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-
-        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
-            });
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-            });
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('translate-x-full');
-                });
-            });
-        }
-
-        // Portfolio Filtering Logic
-        const filterButtons = document.querySelectorAll('.project-filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active button styles
-                filterButtons.forEach(b => {
-                    b.classList.remove('bg-gold-500', 'text-white', 'border-gold-500');
-                    b.classList.add('border-white/10', 'text-stone-400');
-                });
-                btn.classList.add('bg-gold-500', 'text-white', 'border-gold-500');
-                btn.classList.remove('border-white/10', 'text-stone-400');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'flex';
-                        // Trigger fade in animation
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Contact Form Fake Submission
-        const contactForm = document.getElementById('contact-form');
-        const formSuccessBox = document.getElementById('form-success-box');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                formSuccessBox.classList.remove('hidden');
-                contactForm.reset();
-                setTimeout(() => {
-                    formSuccessBox.classList.add('hidden');
-                }, 6000);
-            });
-        }
-
-        // ==========================================
-        // DYNAMIC GIT PUSH SIMULATOR SYSTEM
-        // ==========================================
-        const triggerBtn = document.getElementById('trigger-push-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnIcon = document.getElementById('btn-icon');
-        const commitInput = document.getElementById('commit-message');
-        const branchSelect = document.getElementById('git-branch');
-        const terminalScreen = document.getElementById('terminal-screen');
-        const pipelineStatus = document.getElementById('pipeline-status');
-
-        // Pipeline stage nodes
-        const stageInit = document.getElementById('stage-init');
-        const stagePack = document.getElementById('stage-pack');
-        const stagePush = document.getElementById('stage-push');
-        const stageLive = document.getElementById('stage-live');
-
-        function appendTerminalLine(text, colorClass = "text-stone-300", delay = 0) {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const line = document.createElement('div');
-                    line.className = `font-mono tracking-wide ${colorClass}`;
-                    line.innerHTML = text;
-                    terminalScreen.appendChild(line);
-                    terminalScreen.scrollTop = terminalScreen.scrollHeight;
-                    resolve();
-                }, delay);
-            });
-        }
-
-        function resetStages() {
-            const cards = [stageInit, stagePack, stagePush, stageLive];
-            cards.forEach(card => {
-                if (card) {
-                    card.classList.remove('border-gold-500/50', 'bg-gold-500/5');
-                    const indicator = card.querySelector('.stage-indicator');
-                    if (indicator) {
-                        indicator.className = 'stage-indicator h-3 w-3 rounded-full bg-stone-700';
-                    }
-                }
-            });
-        }
-
-        function activateStage(stageEl) {
-            if (stageEl) {
-                stageEl.classList.add('border-gold-500/50', 'bg-gold-500/5');
-                const indicator = stageEl.querySelector('.stage-indicator');
-                if (indicator) {
-                    indicator.className = 'stage-indicator h-3 w-3 rounded-full bg-gold-400 animate-pulse';
-                }
-            }
-        }
-
-        function resolveStage(stageEl) {
-            if (stageEl) {
-                const indicator = stageEl.querySelector('.stage-indicator');
-                if (indicator) {
-                    indicator.className = 'stage-indicator h-3 w-3 rounded-full bg-emerald-500';
-                }
-            }
-        }
-
-        if (triggerBtn) {
-            triggerBtn.addEventListener('click', async () => {
-                // Disable button during pipeline build
-                triggerBtn.disabled = true;
-                triggerBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                btnText.textContent = "EXECUTING DEPLOYMENT...";
-                btnIcon.className = "fas fa-spinner animate-spin";
-                
-                pipelineStatus.textContent = "RUNNING";
-                pipelineStatus.className = "text-gold-400 font-mono animate-pulse";
-
-                // Clear previous build states
-                resetStages();
-                terminalScreen.innerHTML = '<div class="text-stone-500">// Terminal re-initialized. Ready.</div>';
-
-                const branch = branchSelect.value;
-                const commitMsg = commitInput.value || "feat: test github push workflow 🚀";
-
-                // Sequence triggers
-                activateStage(stageInit);
-                await appendTerminalLine(`snadhya-alavekar-workstation:~$ git checkout ${branch}`, "text-white", 300);
-                await appendTerminalLine(`Switched to branch '${branch}'`, "text-stone-400", 200);
-                await appendTerminalLine(`snadhya-alavekar-workstation:~$ git add .`, "text-white", 400);
-                
-                await appendTerminalLine(`snadhya-alavekar-workstation:~$ git commit -m "${commitMsg}"`, "text-white", 500);
-                await appendTerminalLine(`[${branch} 3fca88c] ${commitMsg}`, "text-stone-400", 200);
-                await appendTerminalLine(` 15 files changed, 256 insertions(+), 28 deletions(-)`, "text-stone-400", 100);
-                resolveStage(stageInit);
-
-                // Stage 2
-                activateStage(stagePack);
-                await appendTerminalLine(`snadhya-alavekar-workstation:~$ git push origin ${branch}`, "text-white", 600);
-                await appendTerminalLine(`Enumerating objects: 12, done.`, "text-stone-400", 300);
-                await appendTerminalLine(`Counting objects: 100% (12/12), done.`, "text-stone-400", 200);
-                await appendTerminalLine(`Delta compression using up to 12 threads`, "text-stone-400", 150);
-                await appendTerminalLine(`Compressing objects: 100% (8/8), done.`, "text-stone-400", 250);
-                resolveStage(stagePack);
-
-                // Stage 3
-                activateStage(stagePush);
-                await appendTerminalLine(`Writing objects: 100% (12/12), 4.82 KiB | 4.82 MiB/s, done.`, "text-stone-400", 400);
-                await appendTerminalLine(`Total 12 (delta 4), reused 0 (delta 0), pack-reused 0`, "text-stone-400", 200);
-                await appendTerminalLine(`To https://github.com/snadhya-alavekar/main-portfolio.git`, "text-gold-400", 300);
-                await appendTerminalLine(`   2e145b0..3fca88c  ${branch} -> ${branch}`, "text-stone-300", 200);
-                resolveStage(stagePush);
-
-                // Stage 4
-                activateStage(stageLive);
-                await appendTerminalLine(`[GitHub Trigger]: Webhook successfully dispatched to Vercel/GitHub Pages Edge...`, "text-stone-400", 600);
-                await appendTerminalLine(`[Build Log]: Compiling production static chunks for premium render...`, "text-stone-400", 500);
-                await appendTerminalLine(`[Build Log]: CSS & JS bundling optimized successfully. Size: 45.2 KB.`, "text-stone-400", 400);
-                await appendTerminalLine(`🎉 SUCCESS: Snadhya Alavekar's Portfolio is online on GitHub Pages!`, "text-emerald-400 font-bold", 500);
-                await appendTerminalLine(`Live Deployment URL: https://snadhya-alavekar.github.io/main-portfolio`, "text-gold-400 underline", 100);
-                resolveStage(stageLive);
-
-                // Reset Button
-                triggerBtn.disabled = false;
-                triggerBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                btnText.textContent = "RUN PIPELINE AGAIN";
-                btnIcon.className = "fas fa-arrow-up-from-bracket";
-                
-                pipelineStatus.textContent = "DEPLOYED";
-                pipelineStatus.className = "text-emerald-400 font-mono font-bold";
-            });
-        }
-    </script>
+<body>
+
+<nav>
+
+<div class="logo">
+Sandhya<span>.</span>
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="left">
+
+<h3>Hello, I'm</h3>
+
+<h1>
+<span>Sandhya</span>
+</h1>
+
+<div class="typing"></div>
+
+<p>
+
+Creative Computer Science Student passionate about web development,
+UI/UX design and creating meaningful digital experiences with clean
+and modern interfaces.
+
+</p>
+
+<div class="buttons">
+
+<button class="btn1">
+View Portfolio
+</button>
+
+<button class="btn2">
+Download CV
+</button>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="profile">
+
+<div class="inner">
+S
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h1 class="title">
+About Me
+</h1>
+
+<div class="about">
+
+<div class="aboutbox">
+
+<h2>Who Am I?</h2>
+
+<br>
+
+<p>
+
+I am Sandhya, a passionate Computer Science student who enjoys building
+beautiful websites and solving real-world problems through technology.
+I believe creativity and coding together can create amazing experiences.
+
+</p>
+
+</div>
+
+<div class="aboutbox">
+
+<h2>Education</h2>
+
+<br>
+
+<p>
+
+Bachelor of Computer Science
+
+<br><br>
+
+Interested in:
+
+<br>
+
+• Web Development
+
+<br>
+
+• UI/UX Design
+
+<br>
+
+• Programming
+
+<br>
+
+• Creative Design
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h1 class="title">
+Skills
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="skill">
+HTML
+<div class="bar">
+<div class="fill" style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+CSS
+<div class="bar">
+<div class="fill" style="width:92%"></div>
+</div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="bar">
+<div class="fill" style="width:88%"></div>
+</div>
+</div>
+
+<div class="skill">
+C++
+<div class="bar">
+<div class="fill" style="width:85%"></div>
+</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Strengths</h2>
+
+<br>
+
+<p>
+
+✔ Creative Thinking
+
+<br><br>
+
+✔ Problem Solving
+
+<br><br>
+
+✔ Team Work
+
+<br><br>
+
+✔ Fast Learner
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Achievements</h2>
+
+<br>
+
+<p>
+
+Designed multiple academic projects and modern websites while constantly
+exploring new technologies and improving development skills.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h1 class="title">
+Projects
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>College Website</h2>
+
+<p>
+
+Modern responsive website with attractive UI and smooth experience.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Portfolio Design</h2>
+
+<p>
+
+Elegant personal portfolio showcasing creativity and skills.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Student Management</h2>
+
+<p>
+
+Web application for managing students and academic information.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+Let's Connect
+</h1>
+
+<div class="contact">
+
+<input placeholder="Your Name">
+
+<input placeholder="Email">
+
+<textarea placeholder="Your Message"></textarea>
+
+<button class="send">
+Send Message
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+Designed with ❤ for Sandhya
+
+</footer>
+
+<script>
+
+const words=[
+"Web Developer",
+"Creative Designer",
+"Computer Science Student",
+"Future Software Engineer"
+];
+
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+if(!isDeleting){
+
+document.querySelector(".typing").textContent=current.substring(0,j++);
+
+if(j>current.length){
+
+isDeleting=true;
+
+setTimeout(type,1000);
+
+return;
+
+}
+
+}else{
+
+document.querySelector(".typing").textContent=current.substring(0,j--);
+
+if(j==0){
+
+isDeleting=false;
+
+i++;
+
+if(i==words.length){
+
+i=0;
+
+}
+
+}
+
+}
+
+setTimeout(type,isDeleting?50:100);
+
+}
+
+type();
+
+document.querySelector(".btn1").onclick=()=>{
+
+document.querySelector("#projects").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+document.querySelector(".btn2").onclick=()=>{
+
+alert("Attach your Resume PDF here.");
+
+}
+
+</script>
+
 </body>
 </html>
